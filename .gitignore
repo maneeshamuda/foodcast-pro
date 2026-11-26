@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+.env
+# the full Kaggle dataset is large and not ours to redistribute
+data/raw/train.csv
+data/raw/test.csv
+
+frontend/node_modules/
+frontend/dist/

@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "trained_at": "2026-10-28T04:20:15+00:00",
+  "data_file": "food_demand_sample.csv",
+  "panel": {
+    "rows": 1999,
+    "weeks": 145,
+    "first_week": 1,
+    "last_week": 145,
+    "centers": 77,
+    "meals": 51,
+    "center_meal_pairs": 1534,
+    "median_rows_per_pair": 1.0,
+    "pair_density": 0.008987097064244932
+  },
+  "champion": "lightgbm",
+  "horizon_weeks": 10,
+  "cutoffs": [
+    95,
+    103,
+    111,
+    119,
+    127,
+    135
+  ],
+  "metrics": [
+    {
+      "model": "global_mean",
+      "WMAPE": 0.7346031207483842,
+      "RMSLE": 1.145818977123344,
+      "MAE": 177.5921977479341,
+      "RMSE": 310.11892515561897,
+      "Bias": -0.437725809253564,
+      "WMAPE_fold_std": 0.028833552040477824,
+      "folds_won_vs_pair_average": "0/6"
+    },
+    {
+      "model": "meal_average",
+      "WMAPE": 0.562383766967757,
+      "RMSLE": 0.8415386602133826,
+      "MAE": 135.95772510715364,
+      "RMSE": 248.4242562130249,
+      "Bias": -0.27673734870746397,
+      "WMAPE_fold_std": 0.017204150098454437,
+      "folds_won_vs_pair_average": "0/6"
+    },
+    {
+      "model": "pair_average",
+      "WMAPE": 0.49843723418948704,
+      "RMSLE": 0.7678439544524731,
+      "MAE": 120.49848599735537,
+      "RMSE": 217.1900905702399,
+      "Bias": -0.22105050419133965,
+      "WMAPE_fold_std": 0.021972553021530235,
+      "folds_won_vs_pair_average": "0/6"
+    },
+    {
+      "model": "last_value",
+      "WMAPE": 0.5639805849367149,
+      "RMSLE": 0.8308346055926443,
+      "MAE": 136.3437599666594,
+      "RMSE": 260.37569763187076,
+      "Bias": -0.09857818801520132,
+      "WMAPE_fold_std": 0.03378709337546305,
+      "folds_won_vs_pair_average": "0/6"
+    },
+    {
+      "model": "random_forest",
+      "WMAPE": 0.4777196041132181,
+      "RMSLE": 0.7050722701249912,
+      "MAE": 115.48994553046356,
+      "RMSE": 202.5690877155466,
+      "Bias": -0.1980135897363376,
+      "WMAPE_fold_std": 0.03323937277578676,
+      "folds_won_vs_pair_average": "4/6"
+    },
+    {
+      "model": "lightgbm_no_history",
+      "WMAPE": 0.6543211790283764,
+      "RMSLE": 1.0303266057436593,
+      "MAE": 158.18383142490129,
+      "RMSE": 273.85281258490966,
+      "Bias": -0.29243903542876293,
+      "WMAPE_fold_std": 0.020511359560160796,
+      "folds_won_vs_pair_average": "0/6"
+    },
+    {
+      "model": "lightgbm",
+      "WMAPE": 0.46543579472963864,
+      "RMSLE": 0.7023861956325482,
+      "MAE": 112.52030295268068,
+      "RMSE": 198.57873477969366,
+      "Bias": -0.15283145499093367,
+      "WMAPE_fold_std": 0.033797856139412996,
+      "folds_won_vs_pair_average": "6/6"
+    }
+  ],
+  "policy": [
+    {
+      "model": "pair_average",
+      "waste_cost": 3382253.3525,
+      "lost_margin": 5176703.004000001,
+      "total_cost": 8558956.3565,
+      "fill_rate": 0.742690888447346,
+      "waste_rate": 0.25175301129019345
+    },
+    {
+      "model": "last_value",
+      "waste_cost": 5773227.47,
+      "lost_margin": 4789360.308,
+      "total_cost": 10562587.778,
+      "fill_rate": 0.7657451036048822,
+      "waste_rate": 0.3568618849860059
+    },
+    {
+      "model": "lightgbm",
+      "waste_cost": 3081664.7800000003,
+      "lost_margin": 4668451.6680000005,
+      "total_cost": 7750116.448000001,
+      "fill_rate": 0.7788418961112687,
+      "waste_rate": 0.2512606968215159
+    }
+  ],
+  "coverage": {
+    "nominal": 0.8,
+    "empirical": 0.8310626702997275,
+    "n": 734
+  },
+  "economics": {
+    "margin_pct": 0.4,
+    "waste_pct": 0.25
+  }
+}
